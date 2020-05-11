@@ -2,6 +2,10 @@ nav li {
     margin-right: 2rem;
 }
 
+.imgProperty {
+    height: 15rem;
+}
+
 .width {
     width: 18rem;
 }

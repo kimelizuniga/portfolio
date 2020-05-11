@@ -1,6 +1,7 @@
 const express = require("express"),
       app = express(),
       mongoose = require("mongoose"),
+      path = require("path"),
       bodyParser =  require("body-parser");
 
 
@@ -13,15 +14,17 @@ app.use(express.static("public"));
 
 const projectSchema = new mongoose.Schema({
     title: String,
-    image: String,
+    image:String,
+    link: String,
     description: String
-});
+}); 
 
 const Project = mongoose.model("Project", projectSchema);
 // Project.create(
 //     {
 //     title: "Project Title",
 //     image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+//     link: "www.google.ca",
 //     description: "Filler description"
 //     }, (err, project) => {
 //         console.log(project);
@@ -78,7 +81,8 @@ app.post("/projects", (req, res) => {
     const title = req.body.title,
         image = req.body.image,
         description = req.body.description,
-        newProject = {title: title, image: image, description: description};
+        link = req.body.link,
+        newProject = {title: title, image: image, link: link, description: description};
     
     Project.create(newProject, (err, newCreated) => {
         if(err){
@@ -92,11 +96,17 @@ app.post("/projects", (req, res) => {
 // SHOW ROUTE
 
 app.get("/projects/:id", (req, res) => {
-    res.render("show");
+    Project.findById(req.params.id, (err, foundProject) => {
+        if(err){
+            console.log(err);
+        } else {
+            res.render("show", {project: foundProject});
+        }
+    })
 });
 
 
-
-app.listen(3000, () => {
-    console.log("Portfolio server '3000' initialized...");
+let port = 3000;
+app.listen(port, () => {
+    console.log("Server started on port " + port);
 });
