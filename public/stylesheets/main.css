@@ -1,11 +1,35 @@
 nav li {
     margin-right: 2rem;
 }
-
-.imgProperty {
-    height: 15rem;
+.carousel-inner {
+    width: 80vw;
+    height: 100vh;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 3rem;
 }
 
-.width {
-    width: 18rem;
+.carousel-image {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.imgProperty {
+    height: 20rem;
+}
+
+.cardImg {
+    height: 12rem;
+}
+
+.cardProperty {
+    min-height: 26rem;
+    max-height: 26rem;
+}
+
+@media(max-width: 767.98px){
+    .carousel {
+        display: none;
+    }
 }
