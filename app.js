@@ -1,10 +1,19 @@
+require("dotenv").config();
+
 const express = require("express"),
       app = express(),
       mongoose = require("mongoose"),
+      dotenv    = require('dotenv');
       bodyParser =  require("body-parser");
 
 
-mongoose.connect("mongodb://localhost/portfolio", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+dotenv.config(); 
+ const url = process.env.MONGOURL || "mongodb://localhost/portfolio";      
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() =>{
+    console.log("Connected to Database!");
+}).catch(err => {
+    console.log("ERROR", err.message);
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -106,6 +115,10 @@ app.get("/projects/:id", (req, res) => {
 
 
 let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 app.listen(port, () => {
-    console.log("Server started on port " + port);
+    console.log("Server started");
 });
