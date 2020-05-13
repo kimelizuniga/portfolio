@@ -1,7 +1,6 @@
 const express = require("express"),
       app = express(),
       mongoose = require("mongoose"),
-      path = require("path"),
       bodyParser =  require("body-parser");
 
 
@@ -106,7 +105,7 @@ app.get("/projects/:id", (req, res) => {
 });
 
 
-let port = 3000;
+let port = process.env.PORT;
 app.listen(port, () => {
     console.log("Server started on port " + port);
 });
