@@ -8,7 +8,7 @@ const express = require("express"),
 
 
 dotenv.config(); 
-const url =  process.env.PORT || "mongodb://localhost/portfolio";      
+const url =  process.env.MONGOURL || "mongodb://localhost/portfolio";      
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() =>{
     console.log("Connected to Database!");
 }).catch(err => {
