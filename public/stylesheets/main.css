@@ -28,7 +28,7 @@ nav li {
     max-height: 26rem;
 }
 
-@media(max-width: 767.98px){
+@media(max-width: 800px){
     .carousel {
         display: none;
     }
