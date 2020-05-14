@@ -8,7 +8,7 @@
 
 #redirect http non-www to https://www
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$
+RewriteCond %{HTTP_HOST} ^(www\.)?kimzuniga\.ca
 RewriteRule (.*) https://www.kimzuniga.ca/$1 [R=301,L]
 #redirect https non-www to www
 RewriteCond %{HTTPS} on
