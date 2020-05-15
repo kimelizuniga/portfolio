@@ -7,10 +7,11 @@ html, body {
 
 nav li {
     margin-right: 2rem;
+    
 }
 
 nav a {
-    color: #141414;
+    color:  #857671;
 }
 
 .imgProperty {
@@ -31,13 +32,18 @@ nav a {
 }
 
 .myLogo {
-    width: 30px;
-    height: 40px;
-    margin-left: 2rem;
+    width: 25px;
+    height: 35px;
+    margin-left: 1rem;
 }
 
+.jumbotron {
+    background: #4e413b;
+}
 
-
+.jumbotron h1 {
+    color:#e2ded3;
+}
 #landing {
     display: flex;
     flex-direction: column;
@@ -51,8 +57,9 @@ nav a {
     animation-duration: 8s;
 }
 
-#navCol {
-    background-color: rgba(0, 0, 0, 0);
+#navProp {
+    background-color:  rgba(0, 0, 0, 0,);
+    height: 3rem;
 }
 
 @keyframes landing {
