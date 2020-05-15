@@ -1,18 +1,16 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #e2ded3;
+    color: #857671;
+}
+
 nav li {
     margin-right: 2rem;
 }
-.carousel-inner {
-    width: 80vw;
-    height: 100vh;
-    object-fit: cover;
-    margin: 0 auto;
-    margin-bottom: 3rem;
-}
 
-.carousel-image {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+nav a {
+    color: #141414;
 }
 
 .imgProperty {
@@ -28,8 +26,36 @@ nav li {
     max-height: 26rem;
 }
 
-@media(max-width: 800px){
-    .carousel {
-        display: none;
-    }
+.myName {
+    color: #ff6d24;
+}
+
+.myLogo {
+    width: 30px;
+    height: 40px;
+    margin-left: 2rem;
+}
+
+
+
+#landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#greetings {
+    color: #4e413b;
+    padding-top: 12rem;
+    animation-name: landing;
+    animation-duration: 8s;
+}
+
+#navCol {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes landing {
+    0% {opacity: 0;}
+    100%  {opacity: 1;}
 }
