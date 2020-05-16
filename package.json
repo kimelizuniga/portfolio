@@ -4,9 +4,7 @@
   "description": "Kim Zuniga's Portfolio",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "predeploy": "yarn build",     
-    "deploy": "gh-pages -d build"
+    "start": "node app.js"
   },
     
   "author": "Kim Zuniga",
