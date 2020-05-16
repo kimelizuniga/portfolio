@@ -12,6 +12,34 @@ nav li {
 
 nav a {
     color:  #857671;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+nav li a:hover {
+    color: #e2ded3;
+    background-color: #857671;
+
+}
+
+h1 a {
+    color:  #857671;
+}
+
+h1 a:hover {
+    color: #4e413b;
+}
+
+.card-body a {
+    color: #857671;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-body a:hover {
+    color: #4e413b;
 }
 
 .imgProperty {
@@ -44,6 +72,8 @@ nav a {
 .jumbotron h1 {
     color:#e2ded3;
 }
+
+
 #landing {
     display: flex;
     flex-direction: column;
@@ -65,4 +95,11 @@ nav a {
 @keyframes landing {
     0% {opacity: 0;}
     100%  {opacity: 1;}
+}
+
+
+@media  (max-width: 800px) {
+    #navProp {
+        color:   #e2ded3;
+    }
 }

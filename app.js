@@ -3,116 +3,71 @@ require("dotenv").config();
 const express = require("express"),
       app = express(),
       mongoose = require("mongoose"),
-      dotenv    = require('dotenv');
+      dotenv    = require('dotenv'),
+      passport = require("passport"),
+      LocalStrategy = require("passport-local"),
+      flash = require("connect-flash"),
+      User = require("./models/user"),
+      Project = require("./models/projects"),
+      passportLocalMongoose = require("passport-local-mongoose")
+      methodOverride = require("method-override"),
       bodyParser =  require("body-parser");
 
 
 dotenv.config(); 
-const url =  process.env.MONGOURL || "mongodb://localhost/portfolio";      
+
+// SETUP DATABASE
+const url =  process.env.MONGOURL || "mongodb://localhost/portfolio";  
+
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() =>{
     console.log("Connected to Database!");
 }).catch(err => {
     console.log("ERROR", err.message);
 });
 
+// REQUIRE ROUTES
+
+const indexRoutes = require("./routes/index"),
+      projectRoutes = require("./routes/projects");
+
+// SAVE SESSION
+
+app.use(require("express-session")({
+    secret: "My name is Kim Zuniga",
+    resave: false,
+    saveUninitialized: false
+}));
+
+// APP CONFIG
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
+app.use(flash());
 
+// PASSPORT CONFIG
 
-const projectSchema = new mongoose.Schema({
-    title: String,
-    image:String,
-    link: String,
-    description: String
-}); 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-const Project = mongoose.model("Project", projectSchema);
-// Project.create(
-//     {
-//     title: "Project Title",
-//     image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-//     link: "www.google.ca",
-//     description: "Filler description"
-//     }, (err, project) => {
-//         console.log(project);
-// })
-//=============
-// ROUTES
-//=============
-
-// HOME ROUTE 
-
-app.get("/", (req, res) => {
-    res.render("index");
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
 });
 
-// RESUME ROUTE
+// ROUTES CONFIG
 
-app.get("/resume", (req, res) => {
-    res.render("resume");
-});
+app.use("/", indexRoutes);
+app.use("/projects", projectRoutes );
 
-// ABOUT ROUTE
 
-app.get("/about", (req, res) => {
-    res.render("about");
-});
-
-// CONTACT ROUTE
-
-app.get("/contact", (req, res) => {
-    res.render("contact");
-});
-
-// PROJECTS ROUTE
-
-app.get("/projects", (req, res) => {
-    Project.find({}, (err, allProjects) => {
-        if(err){
-            console.log(err);
-        } else {
-            res.render("projects", {projects: allProjects});
-        }
-    })
-});
-
-// NEW ROUTE
-
-app.get("/projects/new", (req, res) => {
-    res.render("new");
-});
-
-// CREATE ROUTE
-
-app.post("/projects", (req, res) => {
-    const title = req.body.title,
-        image = req.body.image,
-        description = req.body.description,
-        link = req.body.link,
-        newProject = {title: title, image: image, link: link, description: description};
-    
-    Project.create(newProject, (err, newCreated) => {
-        if(err){
-            console.log(err);
-        } else {
-            res.redirect("projects");
-        }
-    })
-});
-
-// SHOW ROUTE
-
-app.get("/projects/:id", (req, res) => {
-    Project.findById(req.params.id, (err, foundProject) => {
-        if(err){
-            console.log(err);
-        } else {
-            res.render("show", {project: foundProject});
-        }
-    })
-});
-
+// LISTEN  PORT
 
 let port = process.env.PORT;
 if (port == null || port == "") {
