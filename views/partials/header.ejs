@@ -4,6 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>KZ Portfolio</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/65c28df05f.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="stylesheets/main.css">
     </head>
     <body>
@@ -12,7 +14,7 @@
             <% if(currentUser){ %>
             <a href="/">Signed in as <%= currentUser.username %></a>
             <% } %>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarLinks" aria-controls="navBarLinks" aria-expanded="false" aria-label="Toggle Navigation">
+            <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarLinks" aria-controls="navBarLinks" aria-expanded="false" aria-label="Toggle Navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse  justify-content-center" id="navBarLinks">
@@ -34,6 +36,11 @@
                     </li>
                 </ul>
             </div>
+            <div id="icons">
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a>
+                <a href=""><i class="fas fa-at"></i></a>
+            </div>
         </nav>
         <div class="container">
             <%if(error && error.length > 0){%>
@@ -44,6 +51,11 @@
             <%if(success && success.length > 0){%>
             <div class="alert alert-success"><%=success%></div>   
             <%}%> 
+        </div>
+        <div id="iconsMobile">
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+            <a href=""><i class="fas fa-at"></i></a>
         </div>
 
    

@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Roboto Slab', serif;
     background-color: #e2ded3;
     color: #857671;
 }
@@ -9,6 +10,7 @@ nav li {
     margin-right: 2rem;
     
 }
+
 
 nav a {
     color:  #857671;
@@ -73,6 +75,27 @@ h1 a:hover {
     color:#e2ded3;
 }
 
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(78,65,59, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler:focus {
+    outline: none;
+}
+
+i {
+    margin-right: 1rem;
+    font-size: 20px;
+    color:  #857671;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+
+i:hover {
+    font-size: 25px;
+}
 
 #landing {
     display: flex;
@@ -82,9 +105,7 @@ h1 a:hover {
 
 #greetings {
     color: #4e413b;
-    padding-top: 12rem;
-    animation-name: landing;
-    animation-duration: 8s;
+    padding-top: 12rem; 
 }
 
 #navProp {
@@ -92,14 +113,32 @@ h1 a:hover {
     height: 3rem;
 }
 
-@keyframes landing {
-    0% {opacity: 0;}
-    100%  {opacity: 1;}
+#icons {
+    position: absolute;
+    right: 0;
+    margin-right: 5rem;
 }
 
+#iconsMobile {
+    display: none;
+}
 
-@media  (max-width: 800px) {
-    #navProp {
-        color:   #e2ded3;
+@media  (max-width: 990px) {
+
+    #greetings h1, p {
+        font-size: 2rem;
+    }
+
+    #icons{
+        display: none;
+    }
+
+    #iconsMobile {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
     }
 }
