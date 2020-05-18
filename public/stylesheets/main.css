@@ -27,11 +27,11 @@ nav li a:hover {
 }
 
 h1 a {
-    color:  #857671;
+    color:  #4e413b;
 }
 
 h1 a:hover {
-    color: #4e413b;
+    color: #857671;
 }
 
 .card-body a {
@@ -68,13 +68,6 @@ h1 a:hover {
     margin-left: 1rem;
 }
 
-.jumbotron {
-    background: #4e413b;
-}
-
-.jumbotron h1 {
-    color:#e2ded3;
-}
 
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(78,65,59, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
@@ -84,6 +77,17 @@ h1 a:hover {
     outline: none;
 }
 
+.jumbotron {
+    /* background-color: rgba(133,118,113, 0.3) */
+    background-image: linear-gradient(rgba(226,222,211,1), rgba(226,222, 211,0.8)), url("https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron h1 {
+    color: #4e413b;
+}
 
 
 a i {
@@ -99,6 +103,7 @@ a i {
 i:hover {
     font-size: 25px;
 }
+
 
 #landing {
     display: flex;
