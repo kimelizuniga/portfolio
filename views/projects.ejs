@@ -11,7 +11,7 @@
         <% projects.forEach((project) => { %>
         <div class="col-md-4 col-12 mb-3">
             <div class="card cardProperty">
-                <img class="card-img-top cardImg rounded border" src="<%= project.image %>" alt="">
+                <a href="/projects/<%= project._id %>"><img class="card-img-top cardImg rounded border" src="<%= project.image %>" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title"><%= project.title %></h4>
                         <% if(project.description.length < 15){ %>
