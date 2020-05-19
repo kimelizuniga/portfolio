@@ -209,6 +209,21 @@ nav i:hover {
         width: 70%;
     }
 
+    nav a {
+        color:  #857671;
+        background-color:#e2ded3 ;
+        
+        
+    }
+
+    nav li{
+        width: 100vh;
+    }
+    
+    nav li a:hover {
+        color: #e2ded3;
+        background-color: #857671;
+
 }
 
 @media (max-width: 575px) {
