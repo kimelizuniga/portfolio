@@ -143,6 +143,7 @@ nav i:hover {
 #navProp {
     background-color:  rgba(0, 0, 0, 0,);
     height: 3rem;
+    z-index: 1;
 }
 
 #icons {
@@ -225,10 +226,6 @@ nav i:hover {
 
     .break-rule {
         display: block;
-    }
-
-    .jumbotron {
-        margin-bottom: 4rem;
     }
 
     #dotted-line {
