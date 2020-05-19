@@ -45,17 +45,23 @@ h1 a:hover {
 }
 
 .imgProperty {
-    height: 20rem;
+    height: 22rem;
     width: 50%;
 }
 
 .cardImg {
-    height: 12rem;
+    height: 14rem;
 }
 
 .cardProperty {
-    min-height: 26rem;
-    max-height: 26rem;
+    min-height: 25rem;
+    max-height: 25rem;
+    background-color: #e2ded3;
+    margin-bottom: 1rem;
+}
+
+.cardProperty h4 {
+    color: #4e413b;
 }
 
 .myName {
@@ -100,8 +106,21 @@ a i {
     -o-transition: all 0.3s linear;
 }
 
-i:hover {
+nav i:hover {
     font-size: 25px;
+}
+
+.break-rule {
+    display: none;
+}
+
+#back-arrow {
+    float: left;
+    font-size: 2rem;
+}
+
+#back-arrow:hover{
+    color: #4e413b;
 }
 
 
@@ -144,6 +163,22 @@ i:hover {
     width: 100%;
 }
 
+#more-info{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+#dotted-line {
+    display: none;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4e413b;
+}
+
 @media  (max-width: 990px) {
 
     #greetings h1, h1 p {
@@ -155,7 +190,33 @@ i:hover {
     }
 
     .imgProperty {
-        height: 12rem;
-        width: 14rem;   
+        height: 18rem;
+        width: 70%;
     }
+
+}
+
+@media (max-width: 570px) {
+
+    .imgProperty {
+        width: 100%;
+    }
+
+    .cardImg {
+        height: 18rem;
+    }
+
+    .cardProperty {
+        min-height: 28rem;
+        max-height: 28rem;
+    }
+
+    .break-rule {
+        display: block;
+    }
+
+    #dotted-line {
+        display: block;
+    }
+
 }
