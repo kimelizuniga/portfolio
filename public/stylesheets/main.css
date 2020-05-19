@@ -94,6 +94,12 @@ h1 a:hover {
     color: #4e413b;
 }
 
+.text-property {
+    text-indent: 8%;
+    margin: 0 10%;
+
+}
+
 
 a i {
     margin-right: 1rem;
@@ -106,7 +112,7 @@ a i {
 }
 
 nav i:hover {
-    font-size: 25px;
+    color: #4e413b;
 }
 
 .break-rule {
@@ -221,8 +227,13 @@ nav i:hover {
         display: block;
     }
 
+    .jumbotron {
+        margin-bottom: 4rem;
+    }
+
     #dotted-line {
         display: block;
     }
+
 
 }

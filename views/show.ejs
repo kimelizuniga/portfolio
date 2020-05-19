@@ -1,14 +1,15 @@
 <%- include("partials/header") %>
 
-<div class="container-fluid text-center border mt-4">
+<div class="container-fluid text-center mt-4">
     
     <h1><a class="text-decoration-none" href="<%= project.link %>" target="_blank"><%= project.title %></a></h1>
     <div class="container">
         <a href="/projects"><i id="back-arrow" class="fas fa-arrow-left"></i></a>
         <a href="<%= project.link %>" target="_blank"><img  class="rounded my-4 imgProperty" src="<%= project.image %>" alt=""></a>
     </div>
-    <p class="text-left ml-5"><%= project.description %></p>
+    <p class="text-left text-property"><%= project.description %></p>
 </div>
+<br>
 
 
 
