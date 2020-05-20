@@ -236,4 +236,17 @@ nav i:hover {
         display: block;
     }
 
+    nav a {
+        background-color:rgba(226,222,211, 0.7);
+    }
+
+    nav li{
+        width: 100vh;
+    }
+    
+    nav li a:hover {
+        color: #e2ded3;
+        background-color: #857671;
+    }
+
 }
