@@ -243,10 +243,5 @@ nav i:hover {
     nav li{
         width: 100vh;
     }
-    
-    nav li a:hover {
-        color: #e2ded3;
-        background-color: #857671;
-    }
 
 }
