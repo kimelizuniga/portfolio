@@ -1,8 +1,8 @@
 html, body {
     margin: 0;
     font-family: 'Roboto Slab', serif;
-    background-color: #e2ded3;
-    color: #857671;
+    background-color: white;
+    color: black;
     z-index: -2;
 }
 
@@ -14,7 +14,7 @@ nav li {
 
 
 nav a {
-    color:  #857671;
+    color:  black;
     transition: all 0.4s linear;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
@@ -22,27 +22,22 @@ nav a {
 }
 
 nav li a:hover {
-    color: #e2ded3;
-    background-color: #857671;
+    color: white;
+    background-color: black;
 
 }
 
-h1 a {
-    color:  #4e413b;
+a {
+    color: black; 
 }
 
-h1 a:hover {
-    color: #857671;
+a:hover {
+    color: grey;
 }
 
 .card-body a {
-    color: #857671;
     font-weight: 600;
     text-decoration: none;
-}
-
-.card-body a:hover {
-    color: #4e413b;
 }
 
 .imgProperty {
@@ -57,12 +52,7 @@ h1 a:hover {
 .cardProperty {
     min-height: 25rem;
     max-height: 25rem;
-    background-color: #e2ded3;
     z-index: 0;
-}
-
-.cardProperty h4 {
-    color: #4e413b;
 }
 
 .myName {
@@ -84,29 +74,27 @@ h1 a:hover {
     outline: none;
 }
 
-.jumbotron {
-    /* background-color: rgba(133,118,113, 0.3) */
-    background-image: linear-gradient(rgba(226,222,211,1), rgba(226,222, 211,0.8)), url("https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.jumbotron h1 {
-    color: #4e413b;
+.jumbotron {
+    background-image: url('https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80');
+    background-size: cover;
 }
 
 .text-property {
     text-indent: 8%;
     margin: 0 10%;
+}
 
+.text-indent {
+    text-indent: 2rem;
+    word-wrap: break-word;
 }
 
 
-a i {
+nav a i {
     margin-right: 1rem;
     font-size: 20px;
-    color:  #857671;
+    color:  black;
     transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
@@ -114,7 +102,7 @@ a i {
 }
 
 nav i:hover {
-    color: #4e413b;
+    color: grey;
 }
 
 .break-rule {
@@ -127,7 +115,7 @@ nav i:hover {
 }
 
 #back-arrow:hover{
-    color: #4e413b;
+    color: grey;
 }
 
 
@@ -138,7 +126,7 @@ nav i:hover {
 }
 
 #greetings {
-    color: #4e413b;
+    color: black;
     padding-top: 12rem; 
 }
 
@@ -184,7 +172,6 @@ nav i:hover {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
-    color: #4e413b;
 }
 
 @media (min-width: 575px){
@@ -234,10 +221,6 @@ nav i:hover {
 
     #dotted-line {
         display: block;
-    }
-
-    nav a {
-        background-color:rgba(226,222,211, 0.7);
     }
 
     nav li{

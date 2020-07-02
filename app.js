@@ -9,7 +9,7 @@ const express = require("express"),
       flash = require("connect-flash"),
       User = require("./models/user"),
       Project = require("./models/projects"),
-      passportLocalMongoose = require("passport-local-mongoose")
+      passportLocalMongoose = require("passport-local-mongoose"),
       methodOverride = require("method-override"),
       bodyParser =  require("body-parser");
 
@@ -71,7 +71,7 @@ app.use("/projects", projectRoutes );
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 3000;
+  port = 4000;
 }
 
 app.listen(port, () => {

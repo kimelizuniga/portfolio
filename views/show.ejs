@@ -6,6 +6,11 @@
     <div class="container">
         <a href="/projects"><i id="back-arrow" class="fas fa-arrow-left"></i></a>
         <a href="<%= project.link %>" target="_blank"><img  class="rounded my-4 imgProperty" src="<%= project.image %>" alt=""></a>
+        <% let date = project.created_at; %>
+        <% let d = date.getDate(); %>
+        <% let m = date.getMonth() + 1; %>
+        <% let y = date.getFullYear() %>
+        <p id="createdAt">Uploaded on: <%= d + '/' + m + '/' + y %></p>   
     </div>
     <p class="text-left text-property"><%= project.description %></p>
 </div>
