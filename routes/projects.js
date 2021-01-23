@@ -48,4 +48,28 @@ router.get("/:id", (req, res) => {
     })
 });
 
+// DELETE ROUTE
+
+router.get('/:id/delete', (req,res) =>{
+    Project.findById(req.params.id, (err, foundProject) => {
+        if(err){
+            console.log(err)
+        } else {
+            res.render('delete', {project: foundProject})
+        }
+    })
+})
+
+router.delete('/:id', (req, res) => {
+    Project.findById(req.params.id, (err, product) => {
+        if(err){
+            res.redirect('/projects')
+        } else {
+            product.remove();
+            req.flash('success', 'Project removed successfully')
+            res.redirect('/projects')
+        }
+    })
+})
+
 module.exports = router;

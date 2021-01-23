@@ -14,6 +14,9 @@
                 <a href="/projects/<%= project._id %>"><img class="card-img-top cardImg rounded border" src="<%= project.image %>" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title"><%= project.title %></h4>
+                    <% if(currentUser) { %>
+                        <a class="mt-5 text-danger" href="/projects/<%= project._id %>/delete"><i class="far fa-trash-alt"></i></a> 
+                    <% } %>
                     <% if(project.description.length <= 30){ %>
                         <p class="text-indent"><%= project.description %></p>
                     <% } else { %>
