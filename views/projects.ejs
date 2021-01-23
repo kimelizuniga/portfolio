@@ -19,11 +19,7 @@
                     <% } else { %>
                         <p class="text-indent"><%= project.description.substring(0, project.description.indexOf(" ", 45)) %>...</p>
                     <% } %>
-                    <% let date = project.created_at; %>
-                    <% let d = date.getDate(); %>
-                    <% let m = date.getMonth() + 1; %>
-                    <% let y = date.getFullYear() %>
-                    <p id="createdAt"><%= d + '/' + m + '/' + y %></p>    
+                      
                     <a id="more-info" href="/projects/<%= project._id %>">More Info</a>
                 </div>
             </div>

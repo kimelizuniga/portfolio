@@ -188,6 +188,10 @@ nav i:hover {
     font-weight: 600;
 }
 
+#myPhoto {
+    box-shadow: 2px 2px 5px black;
+}
+
 @media (min-width: 575px){
 
     .cardProperty {
