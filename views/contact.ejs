@@ -4,6 +4,38 @@
     <div class="jumbotron text-center">
         <h1>Contact</h1>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="w-75 text-center mx-auto mb-4">
+                <form id="contactForm" class="mx-auto mt-4" action="/send" method="POST" enctype=”multipart/form-data” autocomplete="off">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="fullName" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" type="text" name="message" placeholder="Message" required maxlength="6000" rows="8"></textarea>
+                    </div>
+                    <button class="btn btn-dark">Send</button>
+                </form>  
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h5 class="myName">Kim Zuniga</h5>
+            <p>CPA 2020-2023</p>
+            <ul>
+                <li>
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:keaz0923@gmail.com"> keaz0923@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/kimelizuniga" target="_blank">Github</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <%- include("partials/footer") %>

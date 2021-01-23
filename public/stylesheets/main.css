@@ -12,6 +12,10 @@ nav li {
     
 }
 
+ul li {
+    list-style: none;
+}
+
 
 nav a {
     color:  black;
@@ -40,10 +44,10 @@ a:hover {
     text-decoration: none;
 }
 
-.imgProperty {
+/* .imgProperty {
     height: 22rem;
     width: 50%;
-}
+} */
 
 .cardImg {
     height: 14rem;
@@ -57,6 +61,7 @@ a:hover {
 
 .myName {
     color: #ff6d24;
+    text-shadow: 1px 0px 1px black;
 }
 
 .myLogo {
@@ -125,6 +130,15 @@ nav i:hover {
     justify-content: center;
 }
 
+#imgContainer {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#showImg {
+    max-width: 100%;
+}
+
 #greetings {
     color: black;
     padding-top: 12rem; 
@@ -155,7 +169,7 @@ nav i:hover {
     position: absolute;
     bottom: 0;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     width: 100%;
 }
 
@@ -191,18 +205,18 @@ nav i:hover {
         display: none;
     }
 
-    .imgProperty {
+    /* .imgProperty {
         height: 18rem;
         width: 70%;
-    }
+    } */
 
 }
 
 @media (max-width: 575px) {
 
-    .imgProperty {
+    /* .imgProperty {
         width: 100%;
-    }
+    } */
 
     .cardImg {
         height: 18rem;

@@ -3,9 +3,11 @@
 <div class="container-fluid text-center mt-4">
     
     <h1><a class="text-decoration-none" href="<%= project.link %>" target="_blank"><%= project.title %></a></h1>
-    <div class="container">
+    <div>
         <a href="/projects"><i id="back-arrow" class="fas fa-arrow-left"></i></a>
-        <a href="<%= project.link %>" target="_blank"><img  class="rounded my-4 imgProperty" src="<%= project.image %>" alt=""></a>
+        <div id="imgContainer">
+            <a href="<%= project.link %>" target="_blank"><img id="showImg" class="rounded my-4 imgProperty" src="<%= project.image %>" alt=""></a>
+        </div>
         <% let date = project.created_at; %>
         <% let d = date.getDate(); %>
         <% let m = date.getMonth() + 1; %>

@@ -9,12 +9,6 @@ router.get("/", (req, res) => {
     res.render("index");
 });
 
-// RESUME ROUTE
-
-router.get("/resume", (req, res) => {
-    res.render("resume");
-});
-
 // ABOUT ROUTE
 
 router.get("/about", (req, res) => {
